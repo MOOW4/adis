@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-header {
+        @apply text-indigo-600 hover:underline font-bold font-custom text-xl;
+    }
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+    .text-custom {
+        @apply font-bold text-indigo-600 font-custom
+    }
+}

@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import Gallery from "./components/Gallery.jsx";
+import Header from "./components/Header.jsx";
+import Contacts from "./components/Contacts.jsx";
 
 const IMAGES = import.meta.glob("./assets/*")
 
 function App() {
   const [loadedImages, setLoadedImages] = useState([]);
+  const [selectedTab, setSelectedTab] = useState('gallery')
 
   useEffect(() => {
     const loadImages = async () => {
@@ -16,15 +19,26 @@ function App() {
     loadImages();
   }, []);
 
+  const renderTab = () => {
+    switch(selectedTab) {
+      case 'gallery':
+        return <Gallery images={loadedImages}></Gallery>;
+      case 'contact':
+        return <Contacts></Contacts>;
+      default:
+        return <Gallery images={loadedImages}></Gallery>;
+    }
+  }
+
+  function handleTabChange(tab) {
+    setSelectedTab(tab)
+  }
+
   return (
-    <>
-      <header>
-        <h1 className="text-3xl font-bold underline text-indigo-400">React App</h1>
-      </header>
-      <main>
-        <Gallery images={loadedImages}></Gallery>
-      </main>
-    </>
+    <div className="bg-slate-200">
+      <Header tabChange={handleTabChange}>jinxiedis Gallery</Header>
+        {renderTab()}
+    </div>
   )
 }
 
