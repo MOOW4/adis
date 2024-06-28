@@ -6,7 +6,7 @@
 
 @layer components {
     .btn-header {
-        @apply text-indigo-600 hover:underline font-bold font-custom text-xl;
+        @apply text-indigo-600 hover:text-indigo-700 transition-all ease-in-out duration-300 hover:scale-110 font-bold font-custom text-xl ;
     }
     .flex-center {
         @apply flex items-center justify-center;

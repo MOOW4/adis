@@ -6,13 +6,13 @@ export default function Header({tabChange, children}) {
       <h1 className="py-4 text-4xl font-bold text-indigo-600 font-custom">{children}</h1>
       <ul className="md:flex gap-4 justify-evenly w-1/6">
         <li className="flex-center">
-          <button onClick={() => tabChange('about')} className="btn-header">About</button>
+          <button onClick={() => tabChange('about')} className="btn-header text-shadow">About</button>
         </li>
         <li className="flex-center">
-          <button onClick={() => tabChange('gallery')} className="btn-header">Gallery</button>
+          <button onClick={() => tabChange('gallery')} className="btn-header text-shadow">Gallery</button>
         </li>
         <li className="flex-center">
-          <button onClick={() => tabChange('contact')} className="btn-header">Contact</button>
+          <button onClick={() => tabChange('contact')} className="btn-header text-shadow">Contact</button>
         </li>
       </ul>
     </header>

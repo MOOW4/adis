@@ -11,7 +11,7 @@ export default function Gallery({images}) {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [ref, inView] = useInView();
           return (
-              <img ref={ref} key={index} src={image} alt={`image no. ${index}`} className={`rounded transition-all ease-in-out duration-500 ${inView ? 'delay-50 opacity-100' : 'opacity-20'} hover:scale-105 hover:rotate-1`}/>
+              <img ref={ref} key={index} src={image} alt={`image no. ${index}`} className={`rounded transition-all ease-in-out duration-1000 ${inView ? 'opacity-100' : 'opacity-20'} hover:scale-105 hover:rotate-1`}/>
           );
         })}
       </div>
