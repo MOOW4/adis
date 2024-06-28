@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import Gallery from "./components/Gallery.jsx";
 import Header from "./components/Header.jsx";
 import Contacts from "./components/Contacts.jsx";
+import Footer from "./components/Footer.jsx";
 
 const IMAGES = import.meta.glob("./assets/*")
 
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   const renderTab = () => {
-    switch(selectedTab) {
+    switch (selectedTab) {
       case 'gallery':
         return <Gallery images={loadedImages}></Gallery>;
       case 'contact':
@@ -37,7 +38,8 @@ function App() {
   return (
     <div className="bg-slate-200">
       <Header tabChange={handleTabChange}>jinxiedis Gallery</Header>
-        {renderTab()}
+      {renderTab()}
+      <Footer />
     </div>
   )
 }
